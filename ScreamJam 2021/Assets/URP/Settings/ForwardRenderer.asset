@@ -1,5 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-489212298291052883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: HiddenGeometryBeta
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: HiddenGeometryBeta
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 512
+      PassNames: []
+    overrideMaterial: {fileID: 0}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 0
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 1
+      stencilReference: 2
+      stencilCompareFunction: 6
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +54,9 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: 2201566229755202956}
   - {fileID: 6166103534201752480}
-  m_RendererFeatureMap: 8c0d0e52d2888d1ea04b60b47e669255
+  - {fileID: 5092622007410264845}
+  - {fileID: -489212298291052883}
+  m_RendererFeatureMap: 8c0d0e52d2888d1ea04b60b47e6692550d8b06dfbba0ac46adfe9bb401f835f9
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:
@@ -34,7 +75,7 @@ MonoBehaviour:
     m_Bits: 55
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
@@ -55,11 +96,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: MagicWindow
+  m_Name: MagicWindowAlfa
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: MagicWindow
+    passTag: MagicWindowAlfa
     Event: 300
     filterSettings:
       RenderQueueType: 0
@@ -67,16 +108,55 @@ MonoBehaviour:
         serializedVersion: 2
         m_Bits: 64
       PassNames: []
-    overrideMaterial: {fileID: 2100000, guid: a049f0d0090d1c140b4bbb1b3e393d60, type: 2}
+    overrideMaterial: {fileID: 0}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 0
+    depthCompareFunction: 0
+    enableWrite: 0
+    stencilSettings:
+      overrideStencilState: 1
+      stencilReference: 1
+      stencilCompareFunction: 1
+      passOperation: 0
+      failOperation: 2
+      zFailOperation: 1
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
+--- !u!114 &5092622007410264845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: MagicWindowBeta
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: MagicWindowBeta
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 256
+      PassNames: []
+    overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
     overrideDepthState: 0
     depthCompareFunction: 4
     enableWrite: 1
     stencilSettings:
       overrideStencilState: 1
-      stencilReference: 1
+      stencilReference: 2
       stencilCompareFunction: 1
-      passOperation: 2
+      passOperation: 0
       failOperation: 2
       zFailOperation: 0
     cameraSettings:
@@ -94,11 +174,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: HiddenGeometry
+  m_Name: HiddenGeometryAlfa
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: HiddenGeometry
+    passTag: HiddenGeometryAlfa
     Event: 300
     filterSettings:
       RenderQueueType: 0
@@ -114,7 +194,7 @@ MonoBehaviour:
     stencilSettings:
       overrideStencilState: 1
       stencilReference: 1
-      stencilCompareFunction: 3
+      stencilCompareFunction: 6
       passOperation: 0
       failOperation: 0
       zFailOperation: 0
