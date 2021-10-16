@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class StageManager : MonoBehaviour
 {
     private int currentRequirements = 0;
+    private int completedRequirements = 0;
     private int currentStage = 0;
 
     public List<Stage> stages;
@@ -24,11 +25,6 @@ public class StageManager : MonoBehaviour
         LoadFirstStage();
     }
 
-    public bool IsStagePassed()
-    {
-        return currentRequirements <= 0;
-    }
-
     public void LoadFirstStage()
     {
         SceneManager.LoadScene(stages[0].sceneBuildIndex,LoadSceneMode.Additive);
@@ -36,11 +32,14 @@ public class StageManager : MonoBehaviour
 
     public void LoadNextStage()
     {
-        if (!IsStagePassed()) return;
-
         currentStage++;
-        if(currentStage>stages.Count-1)
+        if (currentStage > stages.Count - 1)
+        {
             Debug.LogError("No more stages remaining");
+            return;
+        }
         SceneManager.LoadSceneAsync(stages[currentStage].sceneBuildIndex,LoadSceneMode.Additive);
+        if (currentStage >= 1)
+            SceneManager.UnloadSceneAsync(stages[currentStage - 2].sceneBuildIndex);
     }
 }

@@ -430,12 +430,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -896,11 +896,11 @@ RectTransform:
   m_Father: {fileID: 1149897639}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -447.5, y: -239}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 324.6046, y: 97.1293}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1818146597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,11 +1054,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 79
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1120,6 +1120,8 @@ MonoBehaviour:
   stages:
   - {fileID: 11400000, guid: 8f4ad450f95c6a545a4081a1775a9b19, type: 2}
   - {fileID: 11400000, guid: 4c7203097d6fa124a9a96a735634103a, type: 2}
+  - {fileID: 11400000, guid: a22b26402734b984bbb2bb9484385d2b, type: 2}
+  - {fileID: 11400000, guid: 643b908536907ad46a6706e7de7589d9, type: 2}
 --- !u!1 &1938891321
 GameObject:
   m_ObjectHideFlags: 0
