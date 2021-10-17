@@ -22,7 +22,7 @@ public class InventoryManager : MonoBehaviour
         return shoppingList;
     }
 
-    public void PickUpObject(GameObject goalObject)
+    public void GoalObjectPickedUp(GameObject goalObject)
     {
         if (shoppingList.Contains(goalObject))
         {
