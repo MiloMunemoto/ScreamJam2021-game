@@ -9,6 +9,7 @@ public class AutomaticDoorsControl : MonoBehaviour
     public GameObject secondWall;
     public Door firstDoor;
     public Door secondDoor;
+    public bool inAirlock = false;
 
     void Start()
     {
@@ -17,25 +18,41 @@ public class AutomaticDoorsControl : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        OpenAirlock();
+        OpenFirstDoor();
+    }
+
+    void OnTriggerExit()
+    {
+        CloseSecondDoor();
+        inAirlock = false;
     }
 
     void OnTriggerStay()
     {
-        if (Vector3.Dot(transform.position-player.transform.position,firstDoor.transform.forward) > 0f && Vector3.Distance(transform.position,player.transform.position) > 0.5f)
+        if (!inAirlock && Vector3.Dot(firstDoor.transform.position-player.transform.position,firstDoor.transform.forward) > 0f && Vector3.Distance(firstDoor.transform.position,player.transform.position) > 2.5f)
         {
-            CloseAirlock();
+            CloseFirstDoor();
+            inAirlock = true;
         }
     }
 
-    void OpenAirlock()
+    void OpenFirstDoor()
     {
         firstWall.SetActive(false);
+        firstDoor.Open();
     }
 
-    void CloseAirlock()
+    void CloseFirstDoor()
     {
         firstWall.SetActive(true);
+        firstDoor.Close();
         secondWall.SetActive(false);
+        secondDoor.Open();
+    }
+
+    void CloseSecondDoor()
+    {
+        secondWall.SetActive(true);
+        secondDoor.Close();
     }
 }
