@@ -7,4 +7,5 @@ public class Stage : ScriptableObject
 {
     public string name;
     public int sceneBuildIndex;
+    public List<GameObject> goalObjects;
 }
