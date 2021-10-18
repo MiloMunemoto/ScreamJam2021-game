@@ -34,6 +34,7 @@ public class StageManager : MonoBehaviour
         if (currentStage > stages.Count - 1)
         {
             Debug.LogError("No more stages remaining");
+            InventoryManager.instance.CheckWinCondition();
             return;
         }
         SceneManager.LoadSceneAsync(stages[currentStage].sceneBuildIndex,LoadSceneMode.Additive);

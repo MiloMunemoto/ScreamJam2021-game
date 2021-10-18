@@ -50,4 +50,16 @@ public class InventoryManager : MonoBehaviour
         shoppingList.Add(goalObject);
         shoppingListUpdated.Invoke(shoppingList);
     }
+
+    public void CheckWinCondition()
+    {
+        if (shoppingList.Count == 0)
+        {
+            Debug.Log("Last stage loaded with no items in shopping list, game won");
+        }
+        else
+        {
+            Debug.Log("Last stage loaded with items in shopping list, game lost");
+        }
+    }
 }
