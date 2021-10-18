@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class PickUpEvent : UnityEvent<List<GameObject>>{}
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
+
+    public PickUpEvent shoppingListUpdated = new PickUpEvent();
+    public PickUpEvent inventoryUpdated = new PickUpEvent();
+
     void Awake()
     {
         if (instance != null)
@@ -28,6 +36,9 @@ public class InventoryManager : MonoBehaviour
         {
             inventory.Add(goalObject);
             shoppingList.Remove(goalObject);
+
+            inventoryUpdated.Invoke(inventory);
+            shoppingListUpdated.Invoke(shoppingList);
         }
         else
         {
@@ -37,9 +48,18 @@ public class InventoryManager : MonoBehaviour
 
     public void AddToShoppingList(GameObject goalObject){
         shoppingList.Add(goalObject);
+        shoppingListUpdated.Invoke(shoppingList);
     }
-    public void AddToShoppingList(List<GameObject> goalObjects)
+
+    public void CheckWinCondition()
     {
-        shoppingList.AddRange(goalObjects);
+        if (shoppingList.Count == 0)
+        {
+            Debug.Log("Last stage loaded with no items in shopping list, game won");
+        }
+        else
+        {
+            Debug.Log("Last stage loaded with items in shopping list, game lost");
+        }
     }
 }
