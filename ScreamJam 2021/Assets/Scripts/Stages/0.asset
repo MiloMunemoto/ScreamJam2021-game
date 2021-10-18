@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: x
   sceneBuildIndex: 1
+  goalObjects:
+  - {fileID: 711925006042376176, guid: ce8cb26ee3d7f5a478a47ee2531bb214, type: 3}

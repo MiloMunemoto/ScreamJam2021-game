@@ -6,6 +6,10 @@ public class GoalObject : Interactable
 {
     [SerializeField] private GameObject meshObject;
 
+    void Start()
+    {
+        InventoryManager.instance.AddToShoppingList(gameObject);
+    }
     public override void Unhighlight()
     {
         base.Unhighlight();
