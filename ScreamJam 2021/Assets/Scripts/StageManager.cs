@@ -33,7 +33,7 @@ public class StageManager : MonoBehaviour
         currentStage++;
         if (currentStage > stages.Count - 1)
         {
-            Debug.LogError("No more stages remaining");
+            Debug.Log("Final stage loaded, no more stages remaining");
             InventoryManager.instance.CheckWinCondition();
             return;
         }
