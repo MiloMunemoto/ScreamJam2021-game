@@ -29,7 +29,7 @@ public class PlayerInteract : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && targetObject != null)
         {
             targetObject?.Interact();
         }
