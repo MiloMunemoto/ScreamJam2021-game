@@ -15,8 +15,8 @@ TagManager:
   - HiddenGeometryAlfa
   - MagicWindowBeta
   - HiddenGeometryBeta
-  - 
-  - 
+  - OnlyPlayerCollisions
+  - Player
   - 
   - 
   - 
