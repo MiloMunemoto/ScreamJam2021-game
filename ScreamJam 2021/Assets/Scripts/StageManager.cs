@@ -18,6 +18,7 @@ public class StageManager : MonoBehaviour
 
     public List<Stage> stages;
 
+
     void Start()
     {
         LoadFirstStage();
@@ -26,10 +27,12 @@ public class StageManager : MonoBehaviour
     public void LoadFirstStage()
     {
         SceneManager.LoadScene(stages[0].sceneBuildIndex,LoadSceneMode.Additive);
+        
     }
 
     public void LoadNextStage()
     {
+        Debug.Log("Triggered");
         currentStage++;
         if (currentStage > stages.Count - 1)
         {
@@ -38,6 +41,8 @@ public class StageManager : MonoBehaviour
             return;
         }
         SceneManager.LoadSceneAsync(stages[currentStage].sceneBuildIndex,LoadSceneMode.Additive);
+
+
         if (currentStage >= 1)
             SceneManager.UnloadSceneAsync(stages[currentStage - 2].sceneBuildIndex);
     }

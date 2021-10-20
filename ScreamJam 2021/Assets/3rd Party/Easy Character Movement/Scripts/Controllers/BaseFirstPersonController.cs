@@ -36,6 +36,7 @@ namespace ECM.Controllers
 
         #region PROPERTIES
 
+
         /// <summary>
         /// Cached camera pivot transform.
         /// </summary>
@@ -117,7 +118,7 @@ namespace ECM.Controllers
             var yScale = isCrouching ? Mathf.Clamp01(crouchingHeight / standingHeight) : 1.0f;
 
             cameraPivotTransform.localScale = Vector3.MoveTowards(cameraPivotTransform.localScale,
-                new Vector3(1.0f, yScale, 1.0f), 5.0f * Time.deltaTime);
+                new Vector3(1.0f, yScale, 1.0f), 5.0f * 0.3f * Time.deltaTime);
         }
 
         /// <summary>
