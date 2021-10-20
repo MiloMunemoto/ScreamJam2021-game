@@ -15,6 +15,12 @@ public class Door : MonoBehaviour
     private float t = 0;
     private float targetT = 0;
 
+    void Start()
+    {
+        leftDoorStartPos = leftDoor.transform.position;
+        rightDoorStartPos = rightDoor.transform.position;
+    }
+
     void Update()
     {
         t = Mathf.Lerp(t, targetT, Time.deltaTime * speed);
