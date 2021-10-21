@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 457422821521874760}
   - component: {fileID: 517334666510859818}
   - component: {fileID: 6507771631204865326}
+  - component: {fileID: 5221142306991940613}
+  - component: {fileID: 6008852787899846774}
   m_Layer: 0
   m_Name: shelf_corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &457422821521874760
 Transform:
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5221142306991940613
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962106292376093974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.752179, y: 2.976756, z: 0.92361546}
+  m_Center: {x: 0.00000047683716, y: 1.6442129e-15, z: -0.5847167}
+--- !u!65 &6008852787899846774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962106292376093974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9314327, y: 2.976756, z: 2.1527681}
+  m_Center: {x: 4.884284, y: -5.819455e-17, z: 0.047950268}

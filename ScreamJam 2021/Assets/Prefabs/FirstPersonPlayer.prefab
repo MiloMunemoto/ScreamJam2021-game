@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5102708406336935672}
   - component: {fileID: 5102709012701819708}
   - component: {fileID: 5106386476628797000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FirstPersonPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5137359909050331990}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -5.98, y: 0, z: -3.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5141264738332604424}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Camera_Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 5073513804626410552}
   - component: {fileID: 5112380049761454638}
   - component: {fileID: 5136493086123917679}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
