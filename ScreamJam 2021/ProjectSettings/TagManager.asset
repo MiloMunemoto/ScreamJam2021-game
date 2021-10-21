@@ -18,8 +18,8 @@ TagManager:
   - OnlyPlayerCollisions
   - Player
   - Interactable
-  - 
-  - 
+  - StoreInside
+  - Ground
   - 
   - 
   - 
