@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 1452531175349902852}
   - component: {fileID: 4215591017176564346}
   m_Layer: 10
-  m_Name: LoadNextStageTrigger 1
+  m_Name: SoundTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
