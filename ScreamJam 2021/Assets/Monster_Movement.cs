@@ -5,7 +5,12 @@ using UnityEngine.AI;
 
 public class Monster_Movement : MonoBehaviour
 {
-    
+
+    [SerializeField]
+    private bool LayOnGround;
+    [SerializeField]
+    private bool walkWeird;
+
     public NavMeshAgent agent;
     [SerializeField]
     private Transform player;
@@ -77,22 +82,24 @@ public class Monster_Movement : MonoBehaviour
       // _audioManager = FindObjectOfType<AudioManager>();
     }
 
-    /*
+    
     private void Start()
     {
-     
-        currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
-        if (_audioManager == null)
-        {
-            _audioManager = FindObjectOfType<AudioManager>();
-        }
-        if (BossSpider)
-        {
-            InvokeRepeating(nameof(ShouldPlaySound), 5f, 4f);
-        }
+        LayDown();
+        /*
+           currentHealth = maxHealth;
+           //healthBar.SetMaxHealth(maxHealth);
+           if (_audioManager == null)
+           {
+               _audioManager = FindObjectOfType<AudioManager>();
+           }
+           if (BossSpider)
+           {
+               InvokeRepeating(nameof(ShouldPlaySound), 5f, 4f);
+           }
+         */
     }
-    */
+
 
     private void Update()
     {
@@ -104,19 +111,56 @@ public class Monster_Movement : MonoBehaviour
 
             if (!playerInSightRange && !playerInAttackRange)
             {
-                Patrolling();               
+               if (!LayOnGround) Patrolling();                            
             }
             if (playerInSightRange && !playerInAttackRange)
             {
-                ChasePlayer();          
+               if (!LayOnGround)
+               {
+                    ChasePlayer();
+               }
+                    else
+                    {
+                        _animator.SetBool("getup", true);
+                        Invoke(nameof(GoToLocation), 4f);
+                        Invoke(nameof(ResetLayDown), 10f);
+                    }
             }
             if (playerInAttackRange && playerInSightRange)
             {
-                AttackPlayer();    
+               if (!LayOnGround) AttackPlayer();
+               
+               
             }
         }
     }
 
+    private void LayDown() 
+    {
+        if (LayOnGround) 
+        {
+            _animator.Play("groundidle");
+        }
+    }
+
+    private void GoToLocation()
+    {
+        walkPoint = new Vector3(transform.position.x -10f, transform.position.y, transform.position.z);
+
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+            walkPointSet = true;
+        Patrolling();
+        
+
+    }
+
+    public void ResetLayDown() 
+    {
+        _animator.SetBool("walking", false);
+        LayOnGround = false;
+        walkPointSet = false;
+        agent.SetDestination(transform.position);
+    }
     /*
     private void ShouldPlaySound()
     {
@@ -139,8 +183,7 @@ public class Monster_Movement : MonoBehaviour
     {
         if (!walkPointSet && !alreadyMoved) 
         {
-            SearchWalkPoint(); 
-            
+            SearchWalkPoint();            
             alreadyMoved = true;
             Invoke(nameof(ResetPatrolPoint), timeBetweenNewMovePoint);
         }
@@ -151,6 +194,7 @@ public class Monster_Movement : MonoBehaviour
             agent.SetDestination(walkPoint); 
             _animator.SetBool("walking", true);
             alreadywalking = false;
+            
         }
            
 
@@ -160,7 +204,8 @@ public class Monster_Movement : MonoBehaviour
         if (distanceToWalkPoint.magnitude < 1f) 
         {
             _animator.SetBool("walking", false);
-            walkPointSet = false;
+            _animator.SetBool("weird", false);
+            walkPointSet = false;  
         }
             
             
@@ -189,8 +234,21 @@ public class Monster_Movement : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        if(!alreadywalking)
-            _animator.SetBool("walking", true); alreadywalking = true;
+        if (!alreadywalking)
+        {
+            if (walkWeird)
+            {
+                numm = Random.Range(0, 3);
+                if (numm == 1)
+                { _animator.SetBool("weird", true); }
+                else { _animator.SetBool("walking", true); }
+
+            }
+            else { _animator.SetBool("walking", true); }
+            
+            alreadywalking = true;
+        }
+           
 
     }
 
@@ -210,7 +268,7 @@ public class Monster_Movement : MonoBehaviour
     {
 
 
-        agent.SetDestination(transform.position);    //Make spider stop
+       // agent.SetDestination(transform.position);    //Make spider stop
         
 
         transform.LookAt(player);
@@ -232,8 +290,9 @@ public class Monster_Movement : MonoBehaviour
             //{ _animator.Play("Spider_Attack_Melee"); }  //Animation event triggers HitPlayer()
             //else
             _animator.SetBool("walking", false);
+            _animator.SetBool("weird", false);
 
-            { _animator.Play("attack"); }
+            _animator.Play("attack");
 
             alreadyAttacked = true;
             alreadywalking = false;

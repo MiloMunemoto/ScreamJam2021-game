@@ -57,46 +57,4 @@ public class MiloAutomaticDoor : MonoBehaviour
         animDoor2L.Play(closeleft);
         animDoor2R.Play(closeright);
     }
-
-
-    
-    /*
-
-
-
-    void OnTriggerExit()
-    {
-        CloseSecondDoor();
-        inAirlock = false;
-    }
-
-    void OnTriggerStay()
-    {
-        if (!inAirlock && Vector3.Dot(firstDoor.transform.position - other.transform.position, firstDoor.transform.forward) > 0f && Vector3.Distance(firstDoor.transform.position, player.transform.position) > 2.5f)
-        {
-            CloseFirstDoor();
-            inAirlock = true;
-        }
-    }
-
-    void OpenFirstDoor()
-    {
-        firstDoor.Open();
-    }
-
-    void CloseFirstDoor()
-    {
-        firstWall.SetActive(true);
-        firstDoor.Close();
-        secondWall.SetActive(false);
-        secondDoor.Open();
-    }
-
-    void CloseSecondDoor()
-    {
-        secondWall.SetActive(true);
-        secondDoor.Close();
-    }
-
-    */
 }
