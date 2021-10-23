@@ -9,6 +9,8 @@ public class PickUpEvent : UnityEvent<List<GameObject>>{}
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
+    [SerializeField]
+    private MiloTriggerScript unlocklevel;
 
     public PickUpEvent shoppingListUpdated = new PickUpEvent();
     public PickUpEvent inventoryUpdated = new PickUpEvent();
@@ -39,6 +41,8 @@ public class InventoryManager : MonoBehaviour
 
             inventoryUpdated.Invoke(inventory);
             shoppingListUpdated.Invoke(shoppingList);
+
+            CheckIfListisEmpty();
         }
         else
         {
@@ -61,5 +65,17 @@ public class InventoryManager : MonoBehaviour
         {
             Debug.Log("Last stage loaded with items in shopping list, game lost");
         }
+    }
+
+    public void CheckIfListisEmpty() 
+    {
+        if (shoppingList.Count.Equals(0))
+        { 
+            Debug.Log("List is empty");
+            unlocklevel.UnlockDoors();
+        }
+        
+        //string number = shoppingList.Count.ToString();
+        //Debug.Log(number);
     }
 }

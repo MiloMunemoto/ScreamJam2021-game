@@ -10,6 +10,8 @@ public class Monster_Movement : MonoBehaviour
     private bool LayOnGround;
     [SerializeField]
     private bool walkWeird;
+    [SerializeField]
+    private bool run;
 
     public NavMeshAgent agent;
     [SerializeField]
@@ -236,17 +238,28 @@ public class Monster_Movement : MonoBehaviour
         agent.SetDestination(player.position);
         if (!alreadywalking)
         {
-            if (walkWeird)
+            if (run) 
             {
-                numm = Random.Range(0, 3);
-                if (numm == 1)
-                { _animator.SetBool("weird", true); }
+                agent.speed = 4f;
+                _animator.Play("Run");
+            
+            }
+            else 
+            {
+                if (walkWeird)
+                {
+                    numm = Random.Range(0, 3);
+                    if (numm == 1)
+                    { _animator.SetBool("weird", true); }
+                    else { _animator.SetBool("walking", true); }
+
+                }
                 else { _animator.SetBool("walking", true); }
 
+                alreadywalking = true;
             }
-            else { _animator.SetBool("walking", true); }
+
             
-            alreadywalking = true;
         }
            
 

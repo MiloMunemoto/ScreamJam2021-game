@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LastScene.unity
     guid: f55be2b7311807540811b10c5043f9bd
   - enabled: 1
-    path: Assets/Scenes/SceneStages/BuildingTheLevel.unity
-    guid: 5bd64ff08bed12b42a0ccd83bb02fff6
+    path: Assets/Scenes/SceneStages/Milo/Milo 1.unity
+    guid: 662f6191a2785ee40a022c69692e1076
+  - enabled: 1
+    path: Assets/Scenes/SceneStages/Milo/Milo 2.unity
+    guid: 6592b11b7024c6f4c856e0869353b8f9
+  - enabled: 1
+    path: Assets/Scenes/SceneStages/Milo/Milo 3.unity
+    guid: 4aef04648573e5d4aa1800ca7f76eef7
   m_configObjects: {}

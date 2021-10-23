@@ -10,12 +10,19 @@ public class MiloDoorDetector : MonoBehaviour
     [SerializeField]
     private MiloAutomaticDoor autoDoor;
 
+    [SerializeField]
+    private MiloTriggerScript triggers;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             if (Door1) { autoDoor.OpenDoor1(); }
-            if (Door2) { autoDoor.OpenDoor2(); }
+            if (Door2) 
+            { 
+                autoDoor.OpenDoor2();
+                triggers.LockDoors();
+            }
         }
     }
 
@@ -24,7 +31,10 @@ public class MiloDoorDetector : MonoBehaviour
         if (other.tag == "Player")
         {
             if (Door1) { autoDoor.CloseDoor1(); }
-            if (Door2) { autoDoor.CloseDoor2(); }
+            if (Door2) 
+            { 
+                autoDoor.CloseDoor2();
+            }
         }
     }
 

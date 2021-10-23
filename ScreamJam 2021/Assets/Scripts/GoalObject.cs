@@ -27,7 +27,8 @@ public class GoalObject : Interactable
     public void PickUp()
     {
         InventoryManager.instance.GoalObjectPickedUp(gameObject);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public override void Interact()
