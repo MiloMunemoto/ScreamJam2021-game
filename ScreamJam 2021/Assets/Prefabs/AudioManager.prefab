@@ -50,9 +50,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
+  - name: pickupitem
+    clip: {fileID: 8300000, guid: cc01dbc9ff4172e4084c3cba55b929c9, type: 3}
+    volume: 0.265
     pitch: 0
     loop: 0
     source: {fileID: 0}

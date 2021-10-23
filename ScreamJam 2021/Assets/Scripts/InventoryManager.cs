@@ -14,6 +14,7 @@ public class InventoryManager : MonoBehaviour
 
     public PickUpEvent shoppingListUpdated = new PickUpEvent();
     public PickUpEvent inventoryUpdated = new PickUpEvent();
+    private AudioManager _audioManager;
 
     void Awake()
     {
@@ -21,6 +22,8 @@ public class InventoryManager : MonoBehaviour
             Destroy(this);
         if (instance == null)
             instance = this;
+
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
 
@@ -38,6 +41,9 @@ public class InventoryManager : MonoBehaviour
         {
             inventory.Add(goalObject);
             shoppingList.Remove(goalObject);
+
+            
+            _audioManager.Play("pickupitem");
 
             inventoryUpdated.Invoke(inventory);
             shoppingListUpdated.Invoke(shoppingList);
