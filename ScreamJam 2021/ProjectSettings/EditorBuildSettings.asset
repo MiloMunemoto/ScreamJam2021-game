@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneStages/Milo/Milo 3.unity
     guid: 4aef04648573e5d4aa1800ca7f76eef7
+  - enabled: 1
+    path: Assets/Scenes/SceneStages/Milo/Milo 4.unity
+    guid: ca7cc107cd714a149a4fa34758c91f74
   m_configObjects: {}

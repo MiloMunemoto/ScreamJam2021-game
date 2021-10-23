@@ -84,4 +84,9 @@ public class InventoryManager : MonoBehaviour
         //string number = shoppingList.Count.ToString();
         //Debug.Log(number);
     }
+
+    public void UnlockFinalDoor() 
+    {
+        unlocklevel.UnlockDoors();
+    }
 }

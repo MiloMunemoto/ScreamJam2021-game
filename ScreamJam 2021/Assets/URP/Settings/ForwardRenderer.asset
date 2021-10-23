@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: HiddenGeometryBeta
-    Event: 300
+    Event: 1000
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -91,13 +91,13 @@ MonoBehaviour:
   m_Name: ForwardRenderer
   m_EditorClassIdentifier: 
   m_RendererFeatures:
-  - {fileID: 2201566229755202956}
   - {fileID: 6166103534201752480}
+  - {fileID: 2201566229755202956}
   - {fileID: 5092622007410264845}
   - {fileID: -489212298291052883}
-  - {fileID: 2429683749518132837}
   - {fileID: -8228500434893162130}
-  m_RendererFeatureMap: 8c0d0e52d2888d1ea04b60b47e6692550d8b06dfbba0ac46adfe9bb401f835f9654691467ff8b7216eb90b70737ece8d
+  - {fileID: 2429683749518132837}
+  m_RendererFeatureMap: a04b60b47e6692558c0d0e52d2888d1e0d8b06dfbba0ac46adfe9bb401f835f96eb90b70737ece8d654691467ff8b721
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: HiddenGeometryBeta
-    Event: 500
+    Event: 1000
     filterSettings:
       RenderQueueType: 1
       LayerMask:

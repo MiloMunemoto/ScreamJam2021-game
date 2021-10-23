@@ -5,6 +5,8 @@ using UnityEngine;
 public class Eyeball_grow : MonoBehaviour
 {
     public bool grow;
+
+    public bool disableAfterGrowing;
     
     public float timeUntilGrow;
 
@@ -14,11 +16,13 @@ public class Eyeball_grow : MonoBehaviour
 
     private bool isScaling = false;
 
+
     private void Start()
     {
         if (grow)
         { StartCoroutine(Grow()); }
-        
+
+       
     }
 
     IEnumerator Grow()
@@ -51,5 +55,16 @@ public class Eyeball_grow : MonoBehaviour
         }
 
         isScaling = false;
+
+        FindObjectOfType<ListManager>().ScaleItemEyeball();
+        if (disableAfterGrowing) 
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void StartGrowning() 
+    {
+        StartCoroutine(Grow());
     }
 }
